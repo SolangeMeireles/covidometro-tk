@@ -34,6 +34,7 @@ python client.py
 
 # A janela tkinter irá executar e basta escolher a cidade e o município para fazer a consulta.
 ```
+![Tela principal](https://github.com/alisonsandrade/covidometro-tk/blob/main/covidometro_ui.png)
 
 ## Contribuidores
 - [Alison S Andrade](https://github.com/alisonsandrade)
