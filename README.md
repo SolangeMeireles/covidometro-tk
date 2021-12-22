@@ -23,6 +23,14 @@ source evn/bin/activate
 pip install -r requirements.txt
 ```
 
+3) Configure a variável de ambiente com os dados da API:
+```bash
+# Na pasta principal do projeto
+mkdir .env
+TOKEN_BRASIL_API=DIGITE_SUA_TOKEN
+```
+A chave de acesso a API pode ser adquirida gratuitamente no site [Brasil.IO](https://brasil.io/home/)
+
 ## Uso
 
 ```bash
