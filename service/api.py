@@ -1,5 +1,6 @@
 from os.path import dirname, realpath, isfile
-from json import dump, load
+from json import load
+from decouple import config
 
 import requests
 
@@ -15,7 +16,7 @@ class ApiService():
 
 
     def search(state, city):
-        API_TOKEN = "SEU_TOKEN_BRASIL_IO"
+        API_TOKEN = config('TOKEN_BRASIL_API', default="")
 
         url_api = f"https://api.brasil.io/v1/dataset/covid19/caso_full/data/?city={city}&state={state}&page_size=1"
 
