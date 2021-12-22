@@ -20,7 +20,7 @@ source evn/bin/activate
 
 3) Instale as dependências do projeto:
 ```bash
-pip install -r requeriments.txt
+pip install -r requirements.txt
 ```
 
 ## Uso
@@ -37,7 +37,7 @@ python client.py
 
 ## Contribuidores
 - [Alison S Andrade](https://github.com/alisonsandrade)
-- [Maria Solange](https://github.com/alisonsandrade)
+- [Maria Solange](https://github.com/SolangeMeireles)
 
 ## Licença
 [MIT](https://choosealicense.com/licenses/mit/)
