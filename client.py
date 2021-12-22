@@ -30,6 +30,19 @@ class Client:
         self.win.configure(bg="lightgray")
         self.win.title("Covidômetro")
 
+        # Menu principal
+        barra_menu = tkinter.Menu(self.win)
+        menu_principal = tkinter.Menu(barra_menu)
+        menu_principal.add_command(label="Sair", command=self.stop)
+
+        menu_about = tkinter.Menu(barra_menu)
+        menu_about.add_command(label="Informações", command=self.gui_about)
+        
+        barra_menu.add_cascade(label="Principal", menu=menu_principal)
+        barra_menu.add_cascade(label="Sobre", menu=menu_about)
+
+        self.win.config(menu=barra_menu)
+
         # Combo dos Estados
         self.label_state = tkinter.Label(self.win, text="Estado", bg="lightgray")
         self.label_state.config(font=("Arial", 12))
@@ -67,7 +80,6 @@ class Client:
                 # self.comboBoxState.grid(column=0, row=1)
         self.comboBoxState.current(14)
         self.comboBoxState.pack()
-        # self.comboBoxState.bind("<<ComboboxSelected>>", self.on_select_state())
 
         # Combo das cidades
         self.label_city = tkinter.Label(self.win, text="Município", bg="lightgray")
@@ -75,8 +87,6 @@ class Client:
         self.label_city.pack(padx=20, pady=5)
 
         self.comboBoxCities = ttk.Combobox(self.win, width=27, textvariable=tkinter.StringVar(), postcommand=self.on_select_cities)
-        # self.comboBoxCities['values'] = ('Selecione a cidade...')
-        # self.comboBoxCities.current(1)
         self.comboBoxCities.pack()
 
 
@@ -129,6 +139,11 @@ class Client:
         self.win.destroy()
         self.sock.close()
         exit(0)
+
+
+    def gui_about(self):
+        from tkinter import messagebox
+        messagebox.showinfo(title="Sobre nós", message="Sistema desenvolvido em Python com TKinter como requisito para obtenção de nota da avaliação de da disciplina de Protocolos de Interconexão de Redes de Computadores do curso TSI - IFPB, Guarabira/PB.\n\nDesenvolvedores:\n- Alison Andrade\n- Maria Solange")
 
 
     def receive_loop(self):
