@@ -23,7 +23,7 @@ source evn/bin/activate
 pip install -r requirements.txt
 ```
 
-3) Configure a variável de ambiente com os dados da API:
+4) Configure a variável de ambiente com os dados da API:
 ```bash
 # Na pasta principal do projeto
 mkdir .env
