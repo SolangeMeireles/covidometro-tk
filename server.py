@@ -22,8 +22,7 @@ def handle(client):
     while True:
         try:
             message = client.recv(1024)
-            data = load_service(message.decode("utf-8"))
-            # broadcast(f"{data}.\n".encode("utf-8"))
+            data = load_service(message.decode("utf-8"))            
             broadcast(f"{data}.\n\n".encode("utf-8"))
         except:
             clients.remove(client)
@@ -45,7 +44,7 @@ def receive():
         # Carregando dados da API
         data = load_service(msg_client.decode("utf-8"))
 
-        print("[*] Broadcast:")
+        print("[*] Broadcast")
         broadcast(f"{address} ==> {data}.\n\n".encode("utf-8"))
 
         thread = threading.Thread(target=handle, args=(client,))
@@ -53,7 +52,6 @@ def receive():
 
 
 def load_service(string):
-    print('string', string)
     state = string.strip()[0:2]
     city = string.strip()[3:]
     data = ApiService.search(state, city)

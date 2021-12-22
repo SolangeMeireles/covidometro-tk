@@ -31,6 +31,10 @@ class ApiService():
             print('Aguarde enquanto buscamos os dados na API...')
             res = requests.get(url_api, headers=headers)
             results = res.json()['results']
+            if (len(results) > 0):
+                print('Consulta realizada com sucesso!')
+            else:
+                print('Ops! Nenhum dado foi encontrado!')
         except:
             print('Ops! Ocorreu um erro')
 

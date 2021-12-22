@@ -150,7 +150,7 @@ class Client:
         while self.running:
             try:
                 message = self.sock.recv(1024)
-                print('Servidor ==>', message.decode("utf-8", "ignore"))
+                print('[*] Servidor:', message.decode("utf-8", "ignore"))
                 if self.gui_done:
                     self.text_area.config(state='normal')
                     self.text_area.insert("end", message.decode("utf-8", "ignore"))
