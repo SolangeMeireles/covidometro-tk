@@ -11,7 +11,7 @@ class ApiService():
     
 
     def load_data(self):
-        data = self.read_json('/db.json')
+        data = self.read_json('\db.json')
         return data
 
 
@@ -62,8 +62,9 @@ class ApiService():
 
     def read_json(self, file):
         path = dirname(realpath(__file__))
+        print("testando",path)
         if isfile(path + file):
-            with open(path + file) as f:
+            with open(path + file, "r", encoding='utf-8') as f:
                 data = load(f)
             return data
         else:
